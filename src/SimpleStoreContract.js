@@ -47,11 +47,11 @@ export default class SimpleStorageContract {
     // the gas price is configurable by the user. converting it in wei
     const gasPrice = gasPriceGWEI * 1000000000;
     // call the set function on the contract with our new value
-    this.contract.methods.set(value).call({
+    return await this.contract.methods.set(value).send({
       from: account,
       gasPrice,
       gasCost: 200000,
-    }).then(console.log);
+    });
     // return res;
   }
 
