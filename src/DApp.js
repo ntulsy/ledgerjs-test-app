@@ -77,7 +77,7 @@ export default class DApp extends Component {
         error: null,
         storageValue: localInputValue,
         pending: false,
-        tx: res.tx
+        tx: res ? res.tx : null
       });
     } catch (error) {
       console.log(error);
